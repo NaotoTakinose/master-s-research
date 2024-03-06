@@ -1,0 +1,73 @@
+{
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "01 Release",
+      "command": "C:\\Program Files\\LLVM\\bin\\clang++.exe",
+      "args": [
+        "${workspaceFolder}\\src\\main.cpp",
+        "-IC:/eigen-3.4.0",
+        "-std=c++20",
+        "-Wall",
+        "-O2",
+        "-o",
+        "${workspaceFolder}\\build\\main.exe",
+        "-fcolor-diagnostics", // buildエラーを色付け
+        "-fansi-escape-codes", // buildエラーを色付け
+        "-fopenmp",
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "type": "cppbuild",
+      "label": "02 Debug",
+      "command": "C:\\Program Files\\LLVM\\bin\\clang++.exe",
+      "args": [
+        "${workspaceFolder}\\src\\main.cpp",
+        "-IC:/eigen-3.4.0",
+        "-std=c++20",
+        "-Wall",
+        "-O0",
+        "-g",
+        "-o",
+        "${workspaceFolder}\\build\\main.exe",
+        "-fcolor-diagnostics", // buildエラーを色付け
+        "-fansi-escape-codes", // buildエラーを色付け
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    },
+    {
+      "type": "shell",
+      "label": "execution",
+      "command": [
+        ".\\main.bat"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    }
+  ],
+  "version": "2.0.0"
+}

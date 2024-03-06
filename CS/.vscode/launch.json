@@ -1,0 +1,23 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "debug main.exe",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}\\build\\main.exe",
+			"args": [
+				"2>result\\error.log",
+			],
+			"cwd": "${workspaceFolder}",
+		},
+		{
+			"name": "debug make_input.exe",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}\\input\\make_input.exe",
+			"args": [],
+			"cwd": "${workspaceFolder}\\input",
+		},
+	]
+}
